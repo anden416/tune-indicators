@@ -1,0 +1,6 @@
+numpy==1.21.6
+pandas==1.5.3
+pandas-datareader==0.10.0
+tuneta @ git+https://github.com/jmrichardson/tuneta@01eaeffd0787e6584352f986ac2f1c2fae2eab0a
+yfinance==0.2.20
+
