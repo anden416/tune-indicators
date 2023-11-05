@@ -127,7 +127,10 @@ def main():
         print("tickers.csv not found. Exiting.")
         return
 
-    pool = mp.Pool(min(mp.cpu_count(), len(tickers)))
+    # Ensure the number of processes does not exceed available CPU cores or the number of tickers
+    num_processes = min(mp.cpu_count(), len(tickers))
+
+    pool = mp.Pool(num_processes)
     results = pool.map(process_ticker, tickers)
     pool.close()
     pool.join()
